@@ -12,15 +12,10 @@ public class Main {
         userFactory.crearUsuario("premium", "Josefina");
         userFactory.crearUsuario("normal", "Carlos");
 
-
-        System.out.println(userFactory.usuariosNormales);
-        System.out.println(userFactory.usuariosPremium);
-        System.out.println(userFactory.todosLosUsuarios);
-
-
         CentroDeNotificaciones cdf = CentroDeNotificaciones.getInstance();
 
-        cdf.enviarAMultiplesUsuarios("sms", userFactory.todosLosUsuarios, "Hola a todos!");
+
+        cdf.enviarAMultiplesUsuarios("sms", userFactory.todosLosUsuarios, "Hola Mundo", "premium");
 
 
     }

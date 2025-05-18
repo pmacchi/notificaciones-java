@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 
 public class NotificacionPush implements Notificacion{
@@ -8,7 +9,7 @@ public class NotificacionPush implements Notificacion{
     }
 
     @Override
-    public void enviarAll(Map<Integer, Usuario> mapaUser, String mensaje) {
+    public void enviarAll(List<Usuario> listAux, String mensaje) {
 
     }
 }

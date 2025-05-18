@@ -12,6 +12,6 @@ public class Logger {
     }
 
     public void log(String mensaje, String tipo) {
-        System.out.println("Se envió mediante: " + mensaje + " el siguiente mensaje: " + tipo);
+        System.out.println("Se envió mediante [" + tipo.toUpperCase() + "] el siguiente mensaje: " + mensaje);
     };
 }

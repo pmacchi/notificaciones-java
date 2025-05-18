@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.DoubleToIntFunction;
 
 public class CentroDeNotificaciones {
 
@@ -9,6 +7,7 @@ public class CentroDeNotificaciones {
 
     private Map<Integer, String> historial = new HashMap<>();
     private  Integer clave = 1;
+
 
 
     private CentroDeNotificaciones (){}
@@ -33,12 +32,23 @@ public class CentroDeNotificaciones {
         return historial;
     }
 
-    public void enviarAMultiplesUsuarios(String tipo,  Map<Integer, Usuario> mapaUser, String mensaje) {
+    public void enviarAMultiplesUsuarios(String tipo,  Map<Integer, Usuario> mapaUser, String mensaje, String tipoUsuario) {
         Notificacion n = NotificacionFactory.crearNotificacion(tipo);
-        n.enviarAll(mapaUser, mensaje);
-        System.out.println("Se envió: " + mensaje);
-        System.out.println("A los siguientes usuarios: " + mapaUser);
-            }
+        Logger lo = Logger.getInstance();
+        BuscadorUsuarios bu = new BuscadorUsuarios();
+        bu.setMapaAIterar(mapaUser, tipoUsuario );
+        n.enviarAll(bu.getListaAux(), mensaje);
+
+        lo.log(mensaje,tipo);
+
+             }
+
+    public void enviarUsuarios ( Map<Integer, Usuario> mapaUserNormal, String tipoDeUsuario) {
+
+
+    }
+
+
 
 
 }

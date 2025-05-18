@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 
 public class NotificacionEmail implements  Notificacion{
@@ -7,7 +8,7 @@ public class NotificacionEmail implements  Notificacion{
     }
 
     @Override
-    public void enviarAll(Map<Integer, Usuario> mapaUser, String mensaje) {
+    public void enviarAll(List<Usuario> listAux, String mensaje) {
 
     }
 }
